@@ -1,0 +1,2 @@
+traffic_led.c:11:6:resetState	8	static
+traffic_led.c:20:6:cross4way	8	static
