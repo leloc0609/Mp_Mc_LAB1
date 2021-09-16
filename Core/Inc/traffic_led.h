@@ -8,7 +8,7 @@
 #ifndef INC_TRAFFIC_LED_H_
 #define INC_TRAFFIC_LED_H_
 
-void resetState(void);
+
 void cross4way(void);
 
 
