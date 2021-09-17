@@ -1,0 +1,30 @@
+/*
+ * traffic_led.c
+ *
+ *  Created on: Sep 17, 2021
+ *      Author: Win10
+ */
+
+#include "main.h"
+#include "traffic_led.h"
+
+
+
+void cross4way(void){
+	HAL_GPIO_WritePin(RED1_PORT, RED1_PIN, SET);
+	HAL_GPIO_WritePin(GREEN2_PORT, GREEN2_PIN, SET);
+	HAL_Delay(3000);
+	HAL_GPIO_WritePin(GREEN2_PORT, GREEN2_PIN, RESET);
+	HAL_GPIO_WritePin(YELLOW2_PORT, YELLOW2_PIN, SET);
+	HAL_Delay(2000);
+	HAL_GPIO_WritePin(RED1_PORT, RED1_PIN, RESET);
+	HAL_GPIO_WritePin(YELLOW1_PORT, YELLOW1_PIN, SET);
+	HAL_GPIO_WritePin(YELLOW2_PORT, YELLOW2_PIN, RESET);
+	HAL_GPIO_WritePin(RED2_PORT, RED2_PIN, SET);
+	HAL_Delay(3000);
+	HAL_GPIO_WritePin(YELLOW1_PORT, YELLOW1_PIN, RESET);
+	HAL_GPIO_WritePin(GREEN1_PORT, GREEN1_PIN, SET);
+	HAL_Delay(2000);
+	HAL_GPIO_WritePin(GREEN1_PORT, GREEN1_PIN, RESET);
+	HAL_GPIO_WritePin(RED2_PORT, RED2_PIN, RESET);
+}

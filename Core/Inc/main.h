@@ -73,6 +73,19 @@ void Error_Handler(void);
 #define SEG_F_1_PIN			GPIO_PIN_6
 #define SEG_G_1_PORT		GPIOA
 #define SEG_G_1_PIN			GPIO_PIN_7
+
+#define RED1_PORT			GPIOA
+#define RED1_PIN			GPIO_PIN_8
+#define YELLOW1_PORT		GPIOA
+#define YELLOW1_PIN			GPIO_PIN_9
+#define GREEN1_PORT			GPIOA
+#define GREEN1_PIN			GPIO_PIN_10
+#define RED2_PORT			GPIOA
+#define RED2_PIN			GPIO_PIN_11
+#define YELLOW2_PORT		GPIOA
+#define YELLOW2_PIN			GPIO_PIN_12
+#define GREEN2_PORT			GPIOA
+#define GREEN2_PIN			GPIO_PIN_13
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus
