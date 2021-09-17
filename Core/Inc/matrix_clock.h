@@ -8,9 +8,9 @@
 #ifndef INC_MATRIX_CLOCK_H_
 #define INC_MATRIX_CLOCK_H_
 
-void checkConnection(void);
+
 void setRow(uint8_t val);
 void setCol(uint8_t val);
 void setAllClock(void);
-
+void updateClock(uint8_t val);
 #endif /* INC_MATRIX_CLOCK_H_ */

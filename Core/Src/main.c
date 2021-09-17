@@ -95,6 +95,7 @@ int main(void)
   {
     /* USER CODE END WHILE */
 	 //checkConnection();
+	  updateClock(11);
 	  setAllClock();
     /* USER CODE BEGIN 3 */
   }
