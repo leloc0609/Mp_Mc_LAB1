@@ -18,6 +18,17 @@ static uint8_t conversion[8]={
 		0x01 		// 8th dot
 };
 
+static uint8_t clockLayout[8]={
+		0x7E, 	//01111110
+		0x81,	//10000001
+		0x81,	//10000001
+		0x81,	//10000001
+		0x81,	//10000001
+		0x81,	//10000001
+		0x81,	//10000001
+		0x7E	//01111110
+};
+
 void setRow(uint8_t val){
 	HAL_GPIO_WritePin(ROW_1_PORT, ROW_1_PIN, ((val>>7)&0x01));
 	HAL_GPIO_WritePin(ROW_2_PORT, ROW_2_PIN, ((val>>6)&0x01));
@@ -47,4 +58,15 @@ void checkConnection(void){
 			HAL_Delay(500);
 		}
 	}
+}
+void setAllClock(void){
+	//setRow(0x7E);
+	//setCol(0x7E);
+	for(int i = 0; i < 8; i++){
+		setRow(conversion[i]);
+		setCol(clockLayout[i]);
+		HAL_Delay(50);
+
+	}
+
 }

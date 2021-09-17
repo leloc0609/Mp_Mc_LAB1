@@ -11,5 +11,6 @@
 void checkConnection(void);
 void setRow(uint8_t val);
 void setCol(uint8_t val);
+void setAllClock(void);
 
 #endif /* INC_MATRIX_CLOCK_H_ */
