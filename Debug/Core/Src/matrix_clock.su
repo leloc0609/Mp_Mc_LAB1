@@ -1,0 +1,3 @@
+matrix_clock.c:21:6:setRow	16	static
+matrix_clock.c:32:6:setCol	16	static
+matrix_clock.c:42:6:checkConnection	16	static

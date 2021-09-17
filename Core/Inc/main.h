@@ -59,33 +59,40 @@ void Error_Handler(void);
 
 /* Private defines -----------------------------------------------------------*/
 /* USER CODE BEGIN Private defines */
-#define SEG_A_1_PORT		GPIOA
-#define SEG_A_1_PIN			GPIO_PIN_1
-#define SEG_B_1_PORT		GPIOA
-#define SEG_B_1_PIN			GPIO_PIN_2
-#define SEG_C_1_PORT		GPIOA
-#define SEG_C_1_PIN			GPIO_PIN_3
-#define SEG_D_1_PORT		GPIOA
-#define SEG_D_1_PIN			GPIO_PIN_4
-#define SEG_E_1_PORT		GPIOA
-#define SEG_E_1_PIN			GPIO_PIN_5
-#define SEG_F_1_PORT		GPIOA
-#define SEG_F_1_PIN			GPIO_PIN_6
-#define SEG_G_1_PORT		GPIOA
-#define SEG_G_1_PIN			GPIO_PIN_7
+#define ROW_1_PORT			GPIOA
+#define ROW_1_PIN			GPIO_PIN_0
+#define ROW_2_PORT			GPIOA
+#define ROW_2_PIN			GPIO_PIN_1
+#define ROW_3_PORT			GPIOA
+#define ROW_3_PIN			GPIO_PIN_2
+#define ROW_4_PORT			GPIOA
+#define ROW_4_PIN			GPIO_PIN_3
+#define ROW_5_PORT			GPIOA
+#define ROW_5_PIN			GPIO_PIN_4
+#define ROW_6_PORT			GPIOA
+#define ROW_6_PIN			GPIO_PIN_5
+#define ROW_7_PORT			GPIOA
+#define ROW_7_PIN			GPIO_PIN_6
+#define ROW_8_PORT			GPIOA
+#define ROW_8_PIN			GPIO_PIN_7
 
-#define RED1_PORT			GPIOA
-#define RED1_PIN			GPIO_PIN_8
-#define YELLOW1_PORT		GPIOA
-#define YELLOW1_PIN			GPIO_PIN_9
-#define GREEN1_PORT			GPIOA
-#define GREEN1_PIN			GPIO_PIN_10
-#define RED2_PORT			GPIOA
-#define RED2_PIN			GPIO_PIN_11
-#define YELLOW2_PORT		GPIOA
-#define YELLOW2_PIN			GPIO_PIN_12
-#define GREEN2_PORT			GPIOA
-#define GREEN2_PIN			GPIO_PIN_13
+#define COL_1_PORT			GPIOA
+#define COL_1_PIN			GPIO_PIN_8
+#define COL_2_PORT			GPIOA
+#define COL_2_PIN			GPIO_PIN_9
+#define COL_3_PORT			GPIOA
+#define COL_3_PIN			GPIO_PIN_10
+#define COL_4_PORT			GPIOA
+#define COL_4_PIN			GPIO_PIN_11
+#define COL_5_PORT			GPIOA
+#define COL_5_PIN			GPIO_PIN_12
+#define COL_6_PORT			GPIOA
+#define COL_6_PIN			GPIO_PIN_13
+#define COL_7_PORT			GPIOA
+#define COL_7_PIN			GPIO_PIN_14
+#define COL_8_PORT			GPIOA
+#define COL_8_PIN			GPIO_PIN_15
+
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus
