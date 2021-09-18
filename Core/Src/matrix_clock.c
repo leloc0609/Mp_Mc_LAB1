@@ -71,14 +71,13 @@ void setCol(uint8_t val){
 	HAL_GPIO_WritePin(COL_8_PORT, COL_8_PIN, !((val>>0)&0x01));
 }
 
-void setAllClock(void){
+void clearNumberOnClock(void){
 	//setRow(0x7E);
 	//setCol(0x7E);
 	for(int i = 0; i < 8; i++){
 		setRow(conversion[i]);
 		setCol(hourLayout[clockBuffer[0]*8+i]^clockLayout[i]);
 		HAL_Delay(50);
-
 	}
 
 }

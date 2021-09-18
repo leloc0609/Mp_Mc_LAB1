@@ -11,6 +11,6 @@
 
 void setRow(uint8_t val);
 void setCol(uint8_t val);
-void setAllClock(void);
+void clearNumberOnClock(void);
 void updateClock(uint8_t val);
 #endif /* INC_MATRIX_CLOCK_H_ */

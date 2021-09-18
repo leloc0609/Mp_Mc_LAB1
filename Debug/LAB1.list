@@ -39,11 +39,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  17 .debug_line   00004c64  00000000  00000000  0003a23a  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    00079956  00000000  00000000  0003ee9e  2**0
+ 18 .debug_str    0007995d  00000000  00000000  0003ee9e  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000053  00000000  00000000  000b87f4  2**0
+ 19 .comment      00000053  00000000  00000000  000b87fb  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00000dd4  00000000  00000000  000b8848  2**2
+ 20 .debug_frame  00000dd4  00000000  00000000  000b8850  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -114,8 +114,8 @@ int main(void)
 	  updateClock(11);
  800015c:	200b      	movs	r0, #11
  800015e:	f000 f995 	bl	800048c <updateClock>
-	  setAllClock();
- 8000162:	f000 f95f 	bl	8000424 <setAllClock>
+	  clearNumberOnClock();
+ 8000162:	f000 f95f 	bl	8000424 <clearNumberOnClock>
 	  updateClock(11);
  8000166:	e7f9      	b.n	800015c <main+0x10>
 
@@ -526,9 +526,9 @@ void setCol(uint8_t val){
  800041e:	bf00      	nop
  8000420:	40010800 	.word	0x40010800
 
-08000424 <setAllClock>:
+08000424 <clearNumberOnClock>:
 
-void setAllClock(void){
+void clearNumberOnClock(void){
  8000424:	b580      	push	{r7, lr}
  8000426:	b082      	sub	sp, #8
  8000428:	af00      	add	r7, sp, #0
@@ -537,23 +537,23 @@ void setAllClock(void){
 	for(int i = 0; i < 8; i++){
  800042a:	2300      	movs	r3, #0
  800042c:	607b      	str	r3, [r7, #4]
- 800042e:	e01c      	b.n	800046a <setAllClock+0x46>
+ 800042e:	e01c      	b.n	800046a <clearNumberOnClock+0x46>
 		setRow(conversion[i]);
- 8000430:	4a12      	ldr	r2, [pc, #72]	; (800047c <setAllClock+0x58>)
+ 8000430:	4a12      	ldr	r2, [pc, #72]	; (800047c <clearNumberOnClock+0x58>)
  8000432:	687b      	ldr	r3, [r7, #4]
  8000434:	4413      	add	r3, r2
  8000436:	781b      	ldrb	r3, [r3, #0]
  8000438:	4618      	mov	r0, r3
  800043a:	f7ff ff0b 	bl	8000254 <setRow>
 		setCol(hourLayout[clockBuffer[0]*8+i]^clockLayout[i]);
- 800043e:	4b10      	ldr	r3, [pc, #64]	; (8000480 <setAllClock+0x5c>)
+ 800043e:	4b10      	ldr	r3, [pc, #64]	; (8000480 <clearNumberOnClock+0x5c>)
  8000440:	781b      	ldrb	r3, [r3, #0]
  8000442:	00da      	lsls	r2, r3, #3
  8000444:	687b      	ldr	r3, [r7, #4]
  8000446:	4413      	add	r3, r2
- 8000448:	4a0e      	ldr	r2, [pc, #56]	; (8000484 <setAllClock+0x60>)
+ 8000448:	4a0e      	ldr	r2, [pc, #56]	; (8000484 <clearNumberOnClock+0x60>)
  800044a:	5cd2      	ldrb	r2, [r2, r3]
- 800044c:	490e      	ldr	r1, [pc, #56]	; (8000488 <setAllClock+0x64>)
+ 800044c:	490e      	ldr	r1, [pc, #56]	; (8000488 <clearNumberOnClock+0x64>)
  800044e:	687b      	ldr	r3, [r7, #4]
  8000450:	440b      	add	r3, r1
  8000452:	781b      	ldrb	r3, [r3, #0]
@@ -570,8 +570,7 @@ void setAllClock(void){
  8000468:	607b      	str	r3, [r7, #4]
  800046a:	687b      	ldr	r3, [r7, #4]
  800046c:	2b07      	cmp	r3, #7
- 800046e:	dddf      	ble.n	8000430 <setAllClock+0xc>
-
+ 800046e:	dddf      	ble.n	8000430 <clearNumberOnClock+0xc>
 	}
 
 }
