@@ -91,12 +91,35 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  uint8_t hour		=11;
+  uint8_t minute 	=11;
+  uint8_t second	=11;
+
+  uint8_t counterSecond=0;
+  uint8_t counterMinute=0;
+  uint8_t counterHour=0;
   while (1)
   {
     /* USER CODE END WHILE */
-	 //checkConnection();
-	  updateClock(11);
-	  setNumberOnClock();
+	  setClock(hour,minute,second);
+	  updateClock();// delay about 1s
+
+	  counterSecond++;
+	  second= (counterSecond%5==0)? (second+1)%12:second;
+	  //update hour, minute and second
+	  if(counterSecond==60){
+		  counterMinute+=1;
+		  minute= (counterMinute%5==0)? (minute+1)%12:minute;
+		  counterSecond=0;
+
+	  }
+	  if(counterMinute==60){
+		  counterHour+=1;
+		  hour= (hour+1)%12;
+		  counterMinute=0;
+	  }
+
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
